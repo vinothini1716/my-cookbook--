@@ -1,0 +1,52 @@
+:root {
+  --bg-dark: #0f1724;
+  --bg-light: #f7f7f7;
+  --card: #111827;
+  --accent: #ff7a59;
+  color-scheme: dark;
+}
+[data-theme='light'] {
+  --bg-dark: #f7f7f7;
+  --bg-light: #ffffff;
+  --card: #ffffff;
+  --accent: #ff7a59;
+  color-scheme: light;
+}
+
+body, html, #root { height: 100%; margin:0; font-family: Arial, sans-serif; background: var(--bg-dark); color: #fff; }
+.app-header { display:flex; align-items:center; justify-content:space-between; padding:12px 20px; background: rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.03); }
+.header-left { display:flex; align-items:center; gap:8px; }
+.logo { width:40px; height:40px; object-fit:cover; }
+.title { font-size:20px; margin:0; }
+.header-center input { padding:8px; width:300px; border-radius:6px; border:1px solid rgba(255,255,255,0.1); margin-right:8px; }
+.header-center button { padding:8px 10px; margin-right:6px; border-radius:6px; border:none; cursor:pointer; }
+.header-right { display:flex; gap:8px; align-items:center; }
+
+.container { padding:20px; max-width:1100px; margin:0 auto; }
+.grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.recipe-card { background: var(--card); border-radius:12px; overflow:hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.4); cursor:pointer; transition: transform .18s ease, box-shadow .18s ease; border: 2px solid transparent; position:relative; }
+.recipe-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 12px 30px rgba(0,0,0,0.6); border-image-slice:1; border-image-source: linear-gradient(45deg, rgba(255,255,255,0.2), rgba(255,122,89,1)); }
+.card-img { height:150px; background-size:cover; background-position:center; }
+.card-body { padding:10px; }
+.card-actions { display:flex; justify-content:space-between; margin-top:8px; }
+
+.chat-btn { border-radius:999px; background:#fff; border:none; padding:6px; box-shadow:0 8px 20px rgba(0,0,0,0.4); }
+.chat-window { width:320px; height:420px; background:var(--card); color:#fff; border-radius:12px; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 12px 30px rgba(0,0,0,0.6); }
+.chat-header { padding:8px 12px; background:#1f2937; display:flex; justify-content:space-between; align-items:center; cursor:move; }
+.chat-body { padding:12px; flex:1; overflow:auto; }
+.chat-input { display:flex; padding:8px; border-top:1px solid rgba(255,255,255,0.03); }
+.chat-input input { flex:1; padding:8px; border-radius:6px; border:none; }
+.chat-input button { margin-left:8px; padding:8px 12px; border-radius:6px; background:var(--accent); border:none; color:#fff; }
+
+.bot-msg { text-align:left; margin:6px 0; background:rgba(255,255,255,0.04); padding:8px; border-radius:8px; }
+.user-msg { text-align:right; margin:6px 0; background:rgba(255,122,89,0.12); padding:8px; border-radius:8px; }
+
+.detail-header { display:flex; gap:20px; padding:20px; align-items:center; }
+.detail-img { width:280px; border-radius:12px; }
+.detail-meta h2 { margin:0; }
+.detail-body { padding:20px; display:flex; gap:20px; }
+.ingredients ul { list-style: disc; padding-left:20px; }
+.floating-timer { position:fixed; right:24px; bottom:24px; }
+
+.timer { background: #111827; padding:10px; border-radius:8px; color:#fff; box-shadow:0 8px 20px rgba(0,0,0,0.4); }
+.timer-controls { display:flex; gap:8px; margin-top:8px; }
